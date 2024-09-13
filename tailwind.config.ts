@@ -33,3 +33,9 @@ const config: Config = {
 };
 
 export default config;
+
+// Blanco original
+// EBEBEB FFFFFF F2F2F2
+
+// negro
+// FFFFFF F3F3F3 EEEEEE

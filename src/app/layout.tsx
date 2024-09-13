@@ -23,6 +23,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/LogoLK.svg",
   },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.image}`,
+        width: 1920,
+        height: 1080,
+        alt: "OpenGraph Image",
+      },
+    ],
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: siteConfig.twitterHandle,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}${siteConfig.image}`],
+  },
 };
 
 export const viewport: Viewport = {
@@ -41,7 +62,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body
         className={clsx(
-          "bg-page dark:bg-page-dark min-h-screen antialiased",
+          "min-h-screen bg-page antialiased dark:bg-page-dark",
           fontSans.variable,
           fontMono.variable,
           fontPixel.variable,

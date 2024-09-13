@@ -4,6 +4,9 @@ export const siteConfig = {
   name: "LorKami V3",
   description:
     "En cada paso de mi camino, he invertido esfuerzo y dedicación para tejer un tapiz de recuerdos inolvidables. En mi página web personal, anhelo plasmar la belleza de mis vivencias y las joyas de la amistad, creando un espacio donde mis esfuerzos se entrelacen con la calidez de los lazos compartidos ❤️",
+  url: "https://lorkamiv3.vercel.app",
+  image: "/card.png",
+  twitterHandle: "@LorKami2",
   navMenuPrincipal: [
     {
       label: "Inicio",
