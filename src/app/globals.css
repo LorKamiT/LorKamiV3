@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .stroke-draw {
+    stroke-dasharray: 1820;
+    stroke-dashoffset: 1820;
+    fill: transparent;
+    animation: draw 20s ease forwards infinite;
+    /* animation-direction: alternate; */
+    transition: fill 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   }
+
+  @keyframes draw3 {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    40% {
+      stroke-dashoffset: 1820;
+    }
+    50% {
+      stroke-dashoffset: 1820;
+    }
+    80% {
+      stroke-dashoffset: 3640;
+    }
+    100% {
+      stroke-dashoffset: 3640;
+    }
+  }
+
+  .active .stroke-draw {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.AnimSube {
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+  transform-origin: center center;
+}
+
+.AnimBaja {
+  position: absolute;
+  transform: translateY(1em) rotateX(90deg);
+  transition: all 0.4s ease;
+}
+
+.MenuLink:hover .AnimSube {
+  transform: translateY(-0.5em) rotateX(90deg);
+}
+
+.MenuLink:hover .AnimBaja {
+  transform: translateY(0) rotateX(0deg);
 }
