@@ -85,6 +85,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onMouseEnter={() => handleMouseEnter(link.imgmenu)}
+                  onClick={toggleMenu}
                   className={`MenuLink relative flex origin-center overflow-hidden pr-10 font-oswald text-7xl font-bold uppercase transition-all hover:text-sky-200 md:text-9xl ${
                     pathname === link.href
                       ? "text-sky-500 dark:text-sky-300"
@@ -100,6 +101,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  onClick={toggleMenu}
                   className={`pr-10 font-oswald text-xl font-bold uppercase transition-all hover:text-sky-200 md:text-2xl ${
                     pathname === link.href
                       ? "text-sky-500 dark:text-sky-300"

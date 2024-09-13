@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Segunda Pagina",
+  title: "Galeria",
 };
 
 export default function NavbarLayout({
