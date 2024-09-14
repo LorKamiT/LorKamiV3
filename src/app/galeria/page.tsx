@@ -5,10 +5,17 @@ import SearchBar from "./SearchBar";
 import TagSelector from "./TagSelector";
 import ImageCard from "./ImageCard";
 
+interface ImageData {
+  src: string;
+  name: string;
+  tags: string[];
+  folder: string;
+}
+
 const Galeria = () => {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<ImageData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Obtener imágenes desde la API
   useEffect(() => {
@@ -42,7 +49,7 @@ const Galeria = () => {
   return (
     <div className="z-20 flex h-auto w-full items-center justify-center">
       <div className="Caja mt-20 flex h-auto w-[85%] flex-col">
-        <SearchBar setSearchTerm={setSearchTerm} />
+        <SearchBar setSearchTerm={setSearchTerm} placeholder={undefined} />
         <div className="Tags0 mb-4">
           <TagSelector
             selectedTags={selectedTags}
