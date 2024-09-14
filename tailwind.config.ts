@@ -26,6 +26,12 @@ const config: Config = {
         nuevooscuro: "#2d2d2d",
         "nuevooscuro-dark": "#ffffff",
       },
+      zIndex: {
+        "41": "41",
+        "51": "51",
+        "52": "52",
+        "53": "53",
+      },
     },
   },
   plugins: [],

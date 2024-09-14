@@ -34,9 +34,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed flex h-[4rem] w-full justify-center p-2">
+    <div className="fixed z-40 flex h-[4rem] w-full justify-center p-2">
       <div className="sticky flex h-full w-[98%] flex-row items-center justify-between">
-        <div className="Logo z-50 flex h-full w-[50%] flex-row justify-start lg:w-[10%]">
+        <div className="Logo z-41 flex h-full w-[50%] flex-row justify-start lg:w-[10%]">
           <Image
             src={LKLogo}
             alt="LkLogo"
@@ -50,7 +50,7 @@ export default function Navbar() {
         </div>
 
         <div
-          className="Hamburger z-50 flex h-full w-[10%] cursor-pointer items-center justify-end"
+          className="Hamburger z-41 flex h-full w-[10%] cursor-pointer items-center justify-end"
           onClick={toggleMenu}
         >
           <div className="group flex flex-col items-center justify-center space-y-2">
