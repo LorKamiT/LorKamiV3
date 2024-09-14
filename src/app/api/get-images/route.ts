@@ -1,37 +1,55 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
+import fs from "fs";
 import path from "path";
 
 export async function GET() {
-  const imageFolder = path.join(process.cwd(), "public/Galeria");
-  const categories = await fs.readdir(imageFolder);
-  const images = [];
+  const imageDir = path.join(process.cwd(), "public/Galeria");
 
-  for (const category of categories) {
-    const categoryPath = path.join(imageFolder, category);
+  // Función recursiva para obtener imágenes de subcarpetas
+  const getImagesFromFolder = (folderPath: string, folderName: string) => {
+    const files = fs.readdirSync(folderPath);
+    const images = [];
 
-    // Verificar si es un directorio antes de intentar leer su contenido
-    const stat = await fs.lstat(categoryPath);
+    files.forEach((fileName) => {
+      const fullPath = path.join(folderPath, fileName);
+      const stats = fs.statSync(fullPath);
 
-    if (stat.isDirectory()) {
-      const categoryImages = await fs.readdir(categoryPath);
+      if (stats.isDirectory()) {
+        // Si es una carpeta, llamamos recursivamente para obtener las imágenes
+        images.push(
+          ...getImagesFromFolder(fullPath, path.join(folderName, fileName)),
+        );
+      } else {
+        // Procesamos la imagen
+        const imageName = fileName;
+        const baseName = imageName.replace(/\.[^/.]+$/, "");
 
-      for (const fileName of categoryImages) {
-        const tags = fileName.replace(/\.[^/.]+$/, "").split(" ");
+        let tags = baseName.split(" ").slice(2);
+
+        tags = tags.map((tag) =>
+          tag
+            .split("-")
+            .map(
+              (word) =>
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
+            )
+            .join(" "),
+        );
+
         images.push({
-          src: `/Galeria/${category}/${fileName}`,
+          src: `/Galeria/${folderName}/${fileName}`, // Ruta completa de la imagen
+          name: imageName,
           tags: tags,
+          folder: folderName,
         });
       }
-    } else {
-      // Si no es un directorio, podría ser una imagen directamente en la carpeta 'Galeria'
-      const tags = category.replace(/\.[^/.]+$/, "").split(" ");
-      images.push({
-        src: `/Galeria/${category}`,
-        tags: tags,
-      });
-    }
-  }
+    });
+
+    return images;
+  };
+
+  // Obtener todas las imágenes, incluyendo subcarpetas
+  const images = getImagesFromFolder(imageDir, "");
 
   return NextResponse.json({ images });
 }
