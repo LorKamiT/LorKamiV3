@@ -1,15 +1,14 @@
+import { Suspense } from "react";
 export const metadata = {
   title: "Galeria",
 };
 
-export default function NavbarLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Galeria({ children }: { children: React.ReactNode }) {
   return (
-    <section>
-      <div>{children}</div>
-    </section>
+    <Suspense fallback={<div>Cargando galería...</div>}>
+      <section>
+        <div>{children}</div>
+      </section>
+    </Suspense>
   );
 }
