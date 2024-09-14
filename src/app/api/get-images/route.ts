@@ -8,7 +8,12 @@ export async function GET() {
   // Función recursiva para obtener imágenes de subcarpetas
   const getImagesFromFolder = (folderPath: string, folderName: string) => {
     const files = fs.readdirSync(folderPath);
-    const images = [];
+    const images: {
+      src: string; // Ruta completa de la imagen
+      name: string;
+      tags: string[];
+      folder: string;
+    }[] = [];
 
     files.forEach((fileName) => {
       const fullPath = path.join(folderPath, fileName);
