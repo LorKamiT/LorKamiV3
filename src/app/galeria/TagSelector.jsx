@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FaTag } from "react-icons/fa";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
