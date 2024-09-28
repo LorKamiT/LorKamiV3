@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { MdClose, MdChevronLeft, MdChevronRight, MdDownloading } from "react-icons/md";
 
-const ImageExpanded = ({ onClose, images, currentImageIndex }) => {
+const ImageExpanded = ({ onClose, images, currentImageIndex, isVideo  }) => {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(currentImageIndex);
 
@@ -42,6 +42,8 @@ const ImageExpanded = ({ onClose, images, currentImageIndex }) => {
     setLoading(false);
   };
 
+  const videoData = isVideo ? isVideo : null;
+
   return (
     <div className="z-50 fixed top-0 left-0 w-full h-full bg-black/80 flex justify-center items-center">
       <div className="relative flex justify-center items-center w-full h-full max-w-screen-[95svw] max-h-screen-[95svh]">
@@ -52,6 +54,18 @@ const ImageExpanded = ({ onClose, images, currentImageIndex }) => {
           </div>
         )}
 
+{videoData ? (
+          <iframe
+            width="100%"
+            height="100%"
+            src={videoData.url}
+            title="Video Player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute w-full h-full"
+          ></iframe>
+        ) : (
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].name}
@@ -60,6 +74,7 @@ const ImageExpanded = ({ onClose, images, currentImageIndex }) => {
           height={1080}
           onLoad={handleImageLoad}
         />
+                )}
         
         <button onClick={onClose} className="absolute top-4 right-4 text-white text-2xl">
           <MdClose />

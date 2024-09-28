@@ -3,6 +3,7 @@ import { MdDownloading } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 import ImageExpanded from "./ImageExpanded";
 import Image from "next/image";
+import videos from './videos.json';
 
 const ImageCard = ({ image, images, index }) => {
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +21,8 @@ const ImageCard = ({ image, images, index }) => {
   const handleClose = () => {
     setExpanded(false);
   };
+
+  const isVideo = videos.videos.find(video => video.id === image.name);
 
   return (
     <div className="relative w-full overflow-hidden text-center" ref={ref}>
@@ -57,6 +60,7 @@ const ImageCard = ({ image, images, index }) => {
           images={images}
           currentImageIndex={index}
           onClose={handleClose}
+          isVideo={isVideo}
         />
       )}
     </div>
