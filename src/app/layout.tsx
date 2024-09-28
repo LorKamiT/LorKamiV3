@@ -13,6 +13,7 @@ import {
   fontOswald,
 } from "@/config/fonts";
 import Navbar from "../components/navbar";
+import BotonArriba from "../components/BotonArriba";
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +73,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
+          <BotonArriba />
           {children}
         </Providers>
       </body>
