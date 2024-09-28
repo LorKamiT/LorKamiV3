@@ -22,18 +22,16 @@ const Galeria = () => {
     const fetchImages = async () => {
       const res = await fetch("/api/get-images");
       const data = await res.json();
-      console.log("Imágenes recibidas:", data.images); // Verifica los datos recibidos
       setImages(data.images);
     };
 
     fetchImages();
   }, []);
 
+  // Filtrar imágenes según el término de búsqueda y las etiquetas seleccionadas
   const filteredImages = images.filter((image) => {
-    if (!image.name) return false; // Validar si 'name' existe antes de convertir a minúsculas
-
-    const lowerCaseName = image.name.toLowerCase(); // Convertir nombre a minúsculas
-    const searchMatch = lowerCaseName.includes(searchTerm.toLowerCase()); // Búsqueda insensible a mayúsculas y minúsculas
+    const lowerCaseName = image.name.toLowerCase();
+    const searchMatch = lowerCaseName.includes(searchTerm.toLowerCase());
 
     const tagsMatch =
       selectedTags.length === 0 ||
@@ -58,13 +56,12 @@ const Galeria = () => {
         </div>
         <div className="grid grid-cols-1 gap-[1rem] lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {filteredImages.map((image, index) => {
-            console.log("Image src:", image.src); // Verifica si la ruta de la imagen es correcta
             return (
               <ImageCard
                 key={index}
                 image={image}
-                images={images}
-                index={index}
+                images={filteredImages} // Pasar la lista filtrada de imágenes a ImageCard
+                index={index} // Pasar el índice basado en la lista filtrada
               />
             );
           })}
