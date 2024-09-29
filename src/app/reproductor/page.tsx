@@ -19,7 +19,7 @@ import {
 
 import { songsdata, radiosdata } from "./audiosapp";
 
-export default function ReproductorMusicah({ onMount }) {
+export default function ReproductorMusicah() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -54,11 +54,6 @@ export default function ReproductorMusicah({ onMount }) {
 
     window.addEventListener("resize", handleResize);
     handleResize(); // Comprobar el tamaño de la ventana al cargar
-
-    // Ejecutar el callback cuando el componente se monta, si se proporciona
-    if (onMount) {
-      onMount();
-    }
 
     return () => {
       window.removeEventListener("resize", handleResize);
