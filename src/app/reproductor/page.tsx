@@ -92,7 +92,7 @@ export default function ReproductorMusicah() {
       audio.removeEventListener("loadedmetadata", updateProgress);
       audio.removeEventListener("ended", handleSongEnd);
     };
-  }, []);
+  }, [volume]);
 
   useEffect(() => {
     const audio = audioRef.current;
