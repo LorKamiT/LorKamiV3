@@ -192,9 +192,14 @@ export default function ReproductorMusicah() {
     }
   };
 
-  const handleVolumeChange = (event, newValue) => {
+  const handleVolumeChange = (
+    event: React.ChangeEvent<object>,
+    newValue: number,
+  ) => {
     setVolume(newValue);
-    audioRef.current.volume = newValue / 100;
+    if (audioRef.current) {
+      audioRef.current.volume = newValue / 100;
+    }
     if (isMuted) setIsMuted(false); // Desmutear si se ajusta el volumen
   };
 
