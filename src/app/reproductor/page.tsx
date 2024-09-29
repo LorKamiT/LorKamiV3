@@ -193,6 +193,7 @@ export default function ReproductorMusicah() {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleVolumeChange = (
     event: React.ChangeEvent<object>,
     newValue: number,
@@ -423,7 +424,7 @@ export default function ReproductorMusicah() {
                       value={volume}
                       valueLabelDisplay="auto"
                       onChange={(e, newValue) =>
-                        handleVolumeChange(null, newValue)
+                        handleVolumeChange(e, newValue)
                       }
                       sx={{
                         color: "gray",
