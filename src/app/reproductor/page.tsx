@@ -194,13 +194,10 @@ export default function ReproductorMusicah() {
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleVolumeChange = (
-    event: React.ChangeEvent<object>,
-    newValue: number,
-  ) => {
-    setVolume(newValue);
+  const handleVolumeChange = (_event: unknown, newValue: number | number[]) => {
+    setVolume(newValue as number);
     if (audioRef.current) {
-      audioRef.current.volume = newValue / 100;
+      audioRef.current.volume = (newValue as number) / 100;
     }
     if (isMuted) setIsMuted(false); // Desmutear si se ajusta el volumen
   };
@@ -424,10 +421,7 @@ export default function ReproductorMusicah() {
                       step={1}
                       value={volume}
                       valueLabelDisplay="auto"
-                      onChange={(e, newValue) =>
-                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                        handleVolumeChange(e, newValue)
-                      }
+                      onChange={handleVolumeChange}
                       sx={{
                         color: "gray",
                         "& .MuiSlider-thumb": {
