@@ -102,21 +102,21 @@ export default function ReproductorMusicah() {
       audio!.src = songsdata[currentSongIndex].url;
     }
     if (isPlaying) {
-      audio.play();
+      audio!.play();
     }
   }, [currentSongIndex, currentRadioIndex]);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (isPlaying) {
-      audio.play();
+      audio!.play();
     } else {
-      audio.pause();
+      audio!.pause();
     }
   }, [isPlaying]);
 
   useEffect(() => {
-    audioRef.current.volume = isMuted ? 0 : volume / 100;
+    audioRef.current!.volume = isMuted ? 0 : volume / 100;
   }, [isMuted, volume]);
 
   const handlePlayPause = () => {
@@ -125,55 +125,67 @@ export default function ReproductorMusicah() {
 
   const handleStop = () => {
     const audio = audioRef.current;
-    audio.pause();
-    audio.currentTime = 0;
+    audio!.pause();
+    audio!.currentTime = 0;
     setIsPlaying(false);
   };
 
   const handleRewind = () => {
     const audio = audioRef.current;
-    if (audio.currentTime > 2) {
-      audio.currentTime = 0;
+    if (audio!.currentTime > 2) {
+      audio!.currentTime = 0;
     } else if (currentRadioIndex !== null) {
       setCurrentRadioIndex((prevIndex) =>
-        prevIndex > 0 ? prevIndex - 1 : radiosdata.length - 1,
+        prevIndex !== null
+          ? prevIndex > 0
+            ? prevIndex - 1
+            : radiosdata.length - 1
+          : null,
       );
     } else {
       setCurrentSongIndex((prevIndex) =>
-        prevIndex > 0 ? prevIndex - 1 : songsdata.length - 1,
+        prevIndex !== null
+          ? prevIndex > 0
+            ? prevIndex - 1
+            : songsdata.length - 1
+          : 0,
       );
     }
   };
 
   const handleForward = () => {
     if (currentRadioIndex !== null) {
-      setCurrentRadioIndex((prevIndex) => (prevIndex + 1) % radiosdata.length);
+      setCurrentRadioIndex((prevIndex) =>
+        prevIndex !== null ? (prevIndex + 1) % radiosdata.length : 0,
+      );
     } else {
-      setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songsdata.length);
+      setCurrentSongIndex((prevIndex) =>
+        prevIndex !== null ? (prevIndex + 1) % songsdata.length : 0,
+      );
     }
   };
 
-  const handleRadioSelect = (index) => {
+  const handleRadioSelect = (index: number) => {
     setCurrentRadioIndex(index);
-    setCurrentSongIndex(null); // Deselect song
+    setCurrentSongIndex(currentSongIndex !== null ? currentSongIndex : null); // Deselect song
     setIsPlaying(true); // Comienza a reproducir automáticamente la radio seleccionada
   };
 
-  const handleSongSelect = (index) => {
+  const handleSongSelect = (index: number) => {
     setCurrentSongIndex(index);
     setCurrentRadioIndex(null); // Deselect radio
     setIsPlaying(true); // Comienza a reproducir automáticamente la canción seleccionada
   };
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
-  const handleProgressChange = (event, newValue) => {
+  const handleProgressChange = (event: any, newValue: number) => {
     const audio = audioRef.current;
-    if (isFinite(audio.duration)) {
+    if (audio && isFinite(audio.duration)) {
       audio.currentTime = (audio.duration * newValue) / 100;
       setElapsed(audio.currentTime);
     }
