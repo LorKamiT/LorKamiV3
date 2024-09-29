@@ -184,11 +184,11 @@ export default function ReproductorMusicah() {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
-  const handleProgressChange = (event: React.ChangeEvent, newValue: number) => {
-    const audio = audioRef.current;
-    if (audio && isFinite(audio.duration)) {
-      audio.currentTime = (audio.duration * newValue) / 100;
-      setElapsed(audio.currentTime);
+  const handleProgressChange = (event: Event, newValue: number | number[]) => {
+    if (typeof newValue === "number") {
+      const newElapsed = (newValue / 100) * duration;
+      audioRef.current.currentTime = newElapsed;
+      setElapsed(newElapsed);
     }
   };
 
