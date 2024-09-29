@@ -8,9 +8,7 @@ export default function BotonArriba() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-
       if (scrollTop > 200) {
-        // Cambia 200 por la cantidad de píxeles que prefieras
         setShowScrollTopBtn(true);
       } else {
         setShowScrollTopBtn(false);
@@ -18,8 +16,6 @@ export default function BotonArriba() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Asegurarse de recalcular cuando el componente cambia
     handleScroll();
 
     return () => {

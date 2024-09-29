@@ -17,7 +17,6 @@ const Galeria = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  // Obtener imágenes desde la API
   useEffect(() => {
     const fetchImages = async () => {
       const res = await fetch("/api/get-images");
@@ -28,7 +27,6 @@ const Galeria = () => {
     fetchImages();
   }, []);
 
-  // Filtrar imágenes según el término de búsqueda y las etiquetas seleccionadas
   const filteredImages = images.filter((image) => {
     const lowerCaseName = image.name.toLowerCase();
     const searchMatch = lowerCaseName.includes(searchTerm.toLowerCase());
@@ -60,8 +58,8 @@ const Galeria = () => {
               <ImageCard
                 key={index}
                 image={image}
-                images={filteredImages} // Pasar la lista filtrada de imágenes a ImageCard
-                index={index} // Pasar el índice basado en la lista filtrada
+                images={filteredImages}
+                index={index}
               />
             );
           })}

@@ -13,7 +13,6 @@ const TagSelector = ({ selectedTags, setSelectedTags }) => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  // Leer los tags desde los parámetros de la URL
   useEffect(() => {
     const initialTags = searchParams.get("tags");
     if (initialTags) {
@@ -32,7 +31,6 @@ const TagSelector = ({ selectedTags, setSelectedTags }) => {
 
     setSelectedTags(updatedTags);
 
-    // Actualizar los parámetros en la URL
     const params = new URLSearchParams(searchParams);
     if (updatedTags.length > 0) {
       params.set("tags", updatedTags.join(","));

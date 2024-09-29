@@ -14,6 +14,7 @@ import {
 } from "@/config/fonts";
 import Navbar from "../components/navbar";
 import BotonArriba from "../components/BotonArriba";
+import Reproductor from "@/components/Reproductor";
 
 export const metadata: Metadata = {
   title: {
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <BotonArriba />
+          <Reproductor />
           {children}
         </Providers>
       </body>
