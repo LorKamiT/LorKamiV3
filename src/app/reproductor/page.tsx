@@ -68,7 +68,7 @@ export default function ReproductorMusicah() {
 
   useEffect(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio();
+      const audioRef = useRef<HTMLAudioElement | null>(null);
     }
 
     const audio = audioRef.current;
