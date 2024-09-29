@@ -33,7 +33,7 @@ export default function ReproductorMusicah() {
   const [isMuted, setIsMuted] = useState(false); // Estado de mute
   const [isMobile, setIsMobile] = useState(false); // Estado para detectar versión móvil
   const previousVolume = useRef(volume); // Almacenar el volumen antes de mutear
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const expandPlayer = () => {
     setIsExpanded(!isExpanded);
@@ -68,7 +68,7 @@ export default function ReproductorMusicah() {
 
   useEffect(() => {
     if (!audioRef.current) {
-      const audioRef = useRef<HTMLAudioElement | null>(null);
+      audioRef.current = new Audio();
     }
 
     const audio = audioRef.current;
