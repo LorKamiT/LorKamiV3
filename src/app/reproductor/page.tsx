@@ -184,11 +184,7 @@ export default function ReproductorMusicah() {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
-  const handleProgressChange = (
-    event: Event,
-    newValue: number | number[],
-    activeThumb: number,
-  ) => {
+  const handleProgressChange = (event: Event, newValue: number | number[]) => {
     if (typeof newValue === "number" && audioRef.current) {
       // Verificamos que audioRef.current no sea null
       const newElapsed = (newValue / 100) * duration;
