@@ -224,7 +224,7 @@ export default function ReproductorMusicah() {
 
   return (
     <div
-      className={`music-player z-30 bg-white dark:border-white/80 dark:bg-transparent/80 ${isExpanded ? "expanded" : ""}`}
+      className={`music-player z-30 bg-white dark:border-white/80 dark:bg-transparent ${isExpanded ? "expanded" : ""}`}
     >
       {!isExpanded && (
         <div
@@ -298,7 +298,7 @@ export default function ReproductorMusicah() {
                 onClick={handleForward}
               />
             </div>
-            <div className="control-group btnmenu mb-2 flex flex-row">
+            <div className="control-group btnmenu mb-0 flex flex-row">
               <div
                 className="btn"
                 onMouseEnter={toggleTooltip}
@@ -309,7 +309,7 @@ export default function ReproductorMusicah() {
                   style={{ verticalAlign: "middle" }}
                 />
                 {isTooltipVisible && (
-                  <div className="tooltip absolute bottom-[40%] right-0 flex max-h-[11.3rem] w-full flex-col overflow-y-auto rounded-lg border border-black bg-white p-2 dark:bg-black">
+                  <div className="tooltip absolute bottom-[40%] right-0 flex max-h-[30rem] w-full flex-col overflow-y-auto rounded-lg border border-black bg-white p-2 dark:border-white dark:bg-black">
                     {songsdata.map((song, index) => (
                       <div
                         key={index}
@@ -339,7 +339,7 @@ export default function ReproductorMusicah() {
                   style={{ verticalAlign: "middle" }}
                 />
                 {isRadioTooltipVisible && (
-                  <div className="tooltip absolute bottom-[40%] right-0 flex max-h-[11.3rem] w-full flex-col overflow-y-auto rounded-lg border border-black bg-white p-2 dark:bg-black">
+                  <div className="tooltip absolute bottom-[40%] right-0 flex max-h-[30rem] w-full flex-col overflow-y-auto rounded-lg border border-black bg-white p-2 dark:border-white dark:bg-black">
                     {radiosdata.map((radio, index) => (
                       <div
                         key={index}
@@ -367,7 +367,7 @@ export default function ReproductorMusicah() {
                   ? radiosdata[currentRadioIndex].title
                   : songsdata[currentSongIndex].title}
               </p>
-              <p className="TitleMusicaArtist m-0 text-[0.6rem] text-[#424242] dark:text-[#888]">
+              <p className="TitleMusicaArtist mt-2 text-[0.6rem] text-[#424242] dark:text-[#888]">
                 {currentRadioIndex !== null
                   ? radiosdata[currentRadioIndex].artist
                   : songsdata[currentSongIndex].artist}

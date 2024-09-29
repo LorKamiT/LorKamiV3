@@ -50,10 +50,6 @@ export const siteConfig = {
       label: "Pagina LorKami V2",
       href: "https://lorkamiv2.vercel.app/",
     },
-    {
-      label: "Reproductor",
-      href: "/reproductor",
-    },
   ],
   links: {
     discord: "https://discord.gg/QbZ9UUpc6",

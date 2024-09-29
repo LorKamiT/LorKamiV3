@@ -111,6 +111,18 @@ export default function Navbar() {
                   <p>{link.label}</p>
                 </Link>
               ))}
+              <Link
+                key="Reproductor"
+                href="/reproductor"
+                onClick={toggleMenu}
+                className={`pr-10 font-oswald text-xl font-bold uppercase transition-all hover:text-sky-200 sm:hidden md:text-2xl ${
+                  pathname === "/reproductor"
+                    ? "text-sky-500 dark:text-sky-300"
+                    : ""
+                } `}
+              >
+                <p>Reproductor</p>
+              </Link>
             </div>
 
             <div className="MenuImgCambiante hidden h-full w-[85%] lg:flex">
