@@ -58,7 +58,7 @@ export default function ReproductorMusicah() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isExpanded]);
 
   useEffect(() => {
     if (isMobile) {
@@ -104,7 +104,7 @@ export default function ReproductorMusicah() {
     if (isPlaying) {
       audio!.play();
     }
-  }, [currentSongIndex, currentRadioIndex]);
+  }, [currentSongIndex, currentRadioIndex, isPlaying]);
 
   useEffect(() => {
     const audio = audioRef.current;
