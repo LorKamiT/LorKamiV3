@@ -26,7 +26,11 @@ export default function ReproductorMusicah() {
   const [isVolumeTooltipVisible, setIsVolumeTooltipVisible] = useState(false);
   const [isRadioTooltipVisible, setIsRadioTooltipVisible] = useState(false);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [currentRadioIndex, setCurrentRadioIndex] = useState(null);
+  // const [currentRadioIndex, setCurrentRadioIndex] = useState(null);
+  const [currentRadioIndex, setCurrentRadioIndex] = useState<number | null>(
+    null,
+  );
+
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(5); // Volumen predeterminado al 5%
@@ -136,11 +140,7 @@ export default function ReproductorMusicah() {
       audio!.currentTime = 0;
     } else if (currentRadioIndex !== null) {
       setCurrentRadioIndex((prevIndex) =>
-        prevIndex !== null
-          ? prevIndex > 0
-            ? prevIndex - 1
-            : radiosdata.length - 1
-          : null,
+        prevIndex !== null ? (prevIndex > 0 ? prevIndex - 1 : null) : null,
       );
     } else {
       setCurrentSongIndex((prevIndex) =>
