@@ -140,4 +140,11 @@ export const radiosdata = [
     musicimage: "https://i.imgur.com/yQNI8Bs.png",
     url: "https://stream-164.zeno.fm/wghs2vb6dkhvv?zs=RVRrQHq4RFOXxGdvICEGfg",
   },
+  {
+    title: "Fiesta Mexicana GDLJ",
+    artist: "Banda",
+    musicimage:
+      "https://www.fiestamexicanafm.com/sites/all/themes/fiesta/images/logo2.png",
+    url: "https://strcdn.klm99.com:8130/stream/1/",
+  },
 ];
