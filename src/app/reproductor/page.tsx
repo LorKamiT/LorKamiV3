@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { ImMinus } from "react-icons/im";
@@ -20,7 +19,7 @@ import {
 
 import { songsdata, radiosdata } from "./audiosapp";
 
-const ReproductorMusicah = ({ onMount }) => {
+export default function ReproductorMusicah({ onMount }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -437,6 +436,4 @@ const ReproductorMusicah = ({ onMount }) => {
       )}
     </div>
   );
-};
-
-export default ReproductorMusicah;
+}
