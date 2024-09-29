@@ -167,7 +167,8 @@ export default function ReproductorMusicah() {
 
   const handleRadioSelect = (index: number) => {
     setCurrentRadioIndex(index);
-    setCurrentSongIndex(currentSongIndex !== null ? currentSongIndex : null); // Deselect song
+    setCurrentSongIndex(currentSongIndex !== null ? currentSongIndex : -1); // Deselect song
+    // Deselect song
     setIsPlaying(true); // Comienza a reproducir automáticamente la radio seleccionada
   };
 
