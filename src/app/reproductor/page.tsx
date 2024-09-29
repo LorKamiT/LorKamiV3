@@ -415,6 +415,7 @@ export default function ReproductorMusicah() {
                   {getVolumeIcon()}
                 </div>
                 {isVolumeTooltipVisible && !isMobile && (
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
                   <div className="volume-tooltip absolute bottom-[17%] right-0 flex h-8 w-40 flex-col items-center justify-center rounded-lg border border-black bg-white/95 pb-0 pl-4 pr-2 pt-0 dark:border-white dark:bg-transparent/90">
                     <Slider
                       aria-label="Volume"
@@ -424,6 +425,7 @@ export default function ReproductorMusicah() {
                       value={volume}
                       valueLabelDisplay="auto"
                       onChange={(e, newValue) =>
+                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
                         handleVolumeChange(e, newValue)
                       }
                       sx={{
