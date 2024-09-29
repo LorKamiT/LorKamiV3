@@ -97,9 +97,9 @@ export default function ReproductorMusicah() {
   useEffect(() => {
     const audio = audioRef.current;
     if (currentRadioIndex !== null) {
-      audio.src = radiosdata[currentRadioIndex].url;
+      audio!.src = radiosdata[currentRadioIndex].url;
     } else {
-      audio.src = songsdata[currentSongIndex].url;
+      audio!.src = songsdata[currentSongIndex].url;
     }
     if (isPlaying) {
       audio.play();
