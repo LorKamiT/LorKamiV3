@@ -32,6 +32,13 @@ const config: Config = {
         "52": "52",
         "53": "53",
       },
+      minHeight: {
+        custom4rem: "calc(100vh - 4rem)",
+        custom5rem: "calc(100vh - 5rem)",
+      },
+      boxShadow: {
+        customdark: "0 3px 10px rgba(255, 255, 255, 0.1);",
+      },
     },
   },
   plugins: [],

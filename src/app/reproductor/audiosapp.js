@@ -141,7 +141,7 @@ export const radiosdata = [
     url: "https://stream-164.zeno.fm/wghs2vb6dkhvv?zs=RVRrQHq4RFOXxGdvICEGfg",
   },
   {
-    title: "Fiesta Mexicana GDLJ",
+    title: "Fiesta Mexicana GDL",
     artist: "Banda",
     musicimage:
       "https://www.fiestamexicanafm.com/sites/all/themes/fiesta/images/logo2.png",

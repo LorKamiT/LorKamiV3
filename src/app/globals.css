@@ -164,9 +164,6 @@
   .TitleMusicaArtist {
     font-size: 0.9rem;
   }
-  .TitleMusicaArtist.dark {
-    font-size: 0.8rem;
-  }
   .time-info {
     width: 100%;
     font-size: 0.9rem;
@@ -230,4 +227,243 @@
     width: 2.5rem;
     height: 2.5rem;
   }
+}
+
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding: 20px 0;
+  list-style-type: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 3px;
+  background: #e8eaee;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-icon {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  left: 1.7%;
+  top: 0;
+  z-index: 1;
+}
+
+.timeline-title {
+  color: black;
+}
+
+.timeline-content {
+  margin-left: 60px;
+  padding: 20px;
+  border-radius: 5px;
+  width: calc(100% - 110px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+}
+
+.timeline-content img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: auto;
+  display: block;
+}
+
+.Secciones-Guias {
+  color: black;
+  border-bottom: 3px solid #e8eaee;
+}
+
+.CodeBox-Guias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.Caja-Advertencia {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  padding: 0px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.Verde {
+  background-color: #edf7ed;
+  border-radius: 5px;
+  color: #1e4620;
+}
+.Azul {
+  background-color: #e5f6fd;
+  border-radius: 5px;
+  color: #014361;
+}
+.Amarillo {
+  background-color: #fff4e5;
+  border-radius: 5px;
+  color: #694004;
+}
+.Rojo {
+  border-radius: 5px;
+  background-color: #fdeded;
+  color: #5f2120;
+}
+
+.Verde svg {
+  color: #408944;
+}
+.Azul svg {
+  color: #1893d5;
+}
+.Amarillo svg {
+  color: #ef7918;
+}
+.Rojo svg {
+  color: #d74141;
+}
+
+.Caja-Advertencia p {
+  line-height: 1.4;
+}
+
+.Caja-Advertencia svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  padding-right: 4px;
+}
+
+.Caja-Descarga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* border: 1px solid red; */
+}
+
+.Caja-Descarga a {
+  text-decoration: none;
+}
+
+.Caja-Descarga svg {
+  padding: 0px 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.Caja-Descarga button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  gap: 4px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  background-color: #1871cc;
+  border: 0px;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.Caja-Descarga button:hover {
+  background-color: #1258a8;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  height: 100%;
+}
+
+.menu-item h3 {
+  cursor: pointer;
+  color: #090b0b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.menu-item ul {
+  padding-left: 15px;
+}
+
+.menu-item ul li {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #090b0b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  list-style: none;
+  border-left: 1px solid #e8eaee;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item ul li.active {
+  background-color: #ebf5ff;
+  color: #006bd6;
+  border-left: 1px solid #3399ff;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item ul li.active:hover {
+  background-color: #d6ebff;
+  color: #006bd6;
+  border-left: 1px solid #3399ff;
+}
+
+.menu-item ul li:hover {
+  background-color: #f6f7f8;
+  color: #090b0b;
+  border-left: 1px solid rgb(29, 33, 38);
+  transform: translateX(2px);
 }

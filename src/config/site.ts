@@ -51,6 +51,33 @@ export const siteConfig = {
       href: "https://lorkamiv2.vercel.app/",
     },
   ],
+  guiasMenu: [
+    {
+      title: "Crear proyecto en VsCode",
+      subtitles: [
+        { title: "React JS Native", sectionId: "seccion1" },
+        { title: "Next JS", sectionId: "seccion2" },
+      ],
+    },
+    {
+      title: "Deployar pagina",
+      subtitles: [
+        { title: "Github", sectionId: "seccion3" },
+        { title: "Vercel", sectionId: "seccion4" },
+      ],
+    },
+    {
+      title: "Codigos mas usados",
+      subtitles: [
+        { title: "Metadatos", sectionId: "seccion5" },
+        { title: "Font personalizada", sectionId: "seccion6" },
+        { title: "Scrollbar", sectionId: "seccion7" },
+        { title: "Responsive", sectionId: "seccion8" },
+        { title: "Magick", sectionId: "seccion9" },
+        { title: "PowerToys", sectionId: "seccion10" },
+      ],
+    },
+  ],
   links: {
     discord: "https://discord.gg/QbZ9UUpc6",
     twitter: "https://x.com/LorKami2",
