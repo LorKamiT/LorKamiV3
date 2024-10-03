@@ -108,7 +108,7 @@ export const radiosdata = [
     title: "Energy - 90s",
     artist: "Bulgaria",
     musicimage: "https://i.imgur.com/YsfG3pa.png",
-    url: "https://25583.live.streamtheworld.com/RADIO_ENERGYAAC_L.aac?dist=DESKTOP",
+    url: "https://22193.live.streamtheworld.com/RADIO_ENERGYAAC_L.aac?dist=DESKTOP",
   },
   {
     title: "Rock Panzer",
@@ -143,8 +143,7 @@ export const radiosdata = [
   {
     title: "Fiesta Mexicana GDL",
     artist: "Banda",
-    musicimage:
-      "https://www.fiestamexicanafm.com/sites/all/themes/fiesta/images/logo2.png",
+    musicimage: "https://i.imgur.com/HEgIUr7.png",
     url: "https://strcdn.klm99.com:8130/stream/1/",
   },
 ];
