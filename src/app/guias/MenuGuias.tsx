@@ -1,5 +1,5 @@
-import { guiasMenu } from "@/config/site";
-import { usePathname } from "next/navigation";
+// import { guiasMenu } from "@/config/site";
+// import { usePathname } from "next/navigation";
 export default function MenuGuias() {
   return (
     <div className="menu">
