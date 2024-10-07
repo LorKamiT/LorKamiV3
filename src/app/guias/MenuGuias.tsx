@@ -49,7 +49,10 @@ export default function MenuGuias() {
                       : "hover:translate-x-0.5 hover:border-[#1d2126] hover:bg-[#f6f7f8] hover:font-semibold hover:text-[#090b0b] dark:hover:bg-[#14181b] dark:hover:text-white"
                   }`}
                 >
-                  <Link href={`#${subtitle.sectionId}`} className="">
+                  <Link
+                    href={`#${subtitle.sectionId}`}
+                    className="block h-full w-full"
+                  >
                     {subtitle.title}
                   </Link>
                 </li>
