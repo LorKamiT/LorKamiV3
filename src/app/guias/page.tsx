@@ -12,9 +12,9 @@ export default function Guias() {
     setMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="Contenedor-Menu-Guias-Completo min-h-custom4rem flex h-auto w-full">
+    <div className="Contenedor-Menu-Guias-Completo flex h-auto min-h-custom4rem w-full">
       <div
-        className={`Contenedor-Menu-Guias min-h-custom5rem sticky top-20 w-[18%] self-start ${isMenuOpen ? "open" : ""}`}
+        className={`Contenedor-Menu-Guias border-r border-[#e8eaee] dark:border-[#1d2126] ${isMenuOpen ? "open" : ""}`}
       >
         <MenuGuias />
       </div>
