@@ -33,6 +33,16 @@ export default function MenuGuias() {
     };
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const sectionElement = document.getElementById(id);
+    if (sectionElement) {
+      window.scrollTo({
+        top: sectionElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="menu">
       <div className="menu-item">
@@ -43,15 +53,19 @@ export default function MenuGuias() {
               {menu.subtitles.map((subtitle) => (
                 <li
                   key={subtitle.sectionId}
-                  className={`border-l border-[#e8eaee] transition-colors dark:border-[#1d2126] dark:text-[#b6bec9] ${
+                  className={`border-l transition-colors dark:border-[#1d2126] dark:text-[#b6bec9] ${
                     activeSection === subtitle.sectionId
-                      ? "border-[#3382d1] bg-[#ebf5ff] text-[#006bd6] transition-colors hover:translate-x-0.5 hover:bg-[#d6ebff] dark:border-[#3399ff] dark:bg-[#1d2126] dark:text-[#66b3ff] dark:hover:bg-[#14181b] dark:hover:text-white"
-                      : "hover:translate-x-0.5 hover:border-[#1d2126] hover:bg-[#f6f7f8] hover:font-semibold hover:text-[#090b0b] dark:hover:bg-[#14181b] dark:hover:text-white"
+                      ? "!border-l border-[#3382d1] bg-[#ebf5ff] text-[#006bd6] hover:translate-x-0.5 dark:border-[#3399ff] dark:bg-[#1d2126] dark:!text-[#66b3ff] dark:hover:bg-[#14181b] dark:hover:!text-white"
+                      : "border-[#e8eaee] hover:translate-x-0.5 hover:border-[#1d2126] hover:bg-[#f6f7f8] hover:font-semibold hover:text-[#090b0b] dark:hover:bg-[#14181b] dark:hover:text-white"
                   }`}
                 >
                   <Link
                     href={`#${subtitle.sectionId}`}
                     className="block h-full w-full"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(subtitle.sectionId);
+                    }}
                   >
                     {subtitle.title}
                   </Link>

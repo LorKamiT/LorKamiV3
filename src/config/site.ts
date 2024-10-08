@@ -55,26 +55,26 @@ export const siteConfig = {
     {
       title: "Crear proyecto en VsCode",
       subtitles: [
-        { title: "React JS Native", sectionId: "seccion1" },
-        { title: "Next JS", sectionId: "seccion2" },
+        { title: "React JS Native", sectionId: "Crear-ReactJS" },
+        { title: "Next JS", sectionId: "Crear-NextJS" },
       ],
     },
     {
       title: "Deployar pagina",
       subtitles: [
-        { title: "Github", sectionId: "seccion3" },
-        { title: "Vercel", sectionId: "seccion4" },
+        { title: "Github", sectionId: "Deployar-Github" },
+        { title: "Vercel", sectionId: "Deployar-Vercel" },
       ],
     },
     {
       title: "Codigos mas usados",
       subtitles: [
-        { title: "Metadatos", sectionId: "seccion5" },
-        { title: "Font personalizada", sectionId: "seccion6" },
-        { title: "Scrollbar", sectionId: "seccion7" },
-        { title: "Responsive", sectionId: "seccion8" },
-        { title: "Magick", sectionId: "seccion9" },
-        { title: "PowerToys", sectionId: "seccion10" },
+        { title: "Metadatos", sectionId: "Metadados" },
+        { title: "Font personalizada", sectionId: "Font-personalizada" },
+        { title: "Scrollbar", sectionId: "Scrollbar" },
+        { title: "Responsive", sectionId: "Responsive" },
+        { title: "Image Magick", sectionId: "ImageMagick" },
+        { title: "PowerToys", sectionId: "PowerToys" },
       ],
     },
   ],

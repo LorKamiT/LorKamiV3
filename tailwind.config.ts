@@ -11,6 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "verde-dark-bg": "#0c130d",
+        "verde-dark-text": "#cce8cd",
+        "azul-dark-bg": "#071318",
+        "azul-dark-text": "#b8e7fb",
+        "amarillo-dark-bg": "#191207",
+        "amarillo-dark-text": "#fcdfb5",
+        "rojo-dark-bg": "#160b0b",
+        "rojo-dark-text": "#dcb3b3",
+      },
+      borderRadius: {
+        custom: "5px",
       },
       fontFamily: {
         pixel: ["var(--font-pixel)", "sans-serif"],
