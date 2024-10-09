@@ -300,6 +300,10 @@
   color: black;
 }
 
+.timeline-content p {
+  margin: 10px;
+}
+
 .timeline-content h3 {
   margin-top: 0;
   font-size: 1.17rem;
