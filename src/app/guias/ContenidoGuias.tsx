@@ -22,7 +22,7 @@ export default function ContenidoGuias() {
               1
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Primeros pasos:</h3>
+              <h3 className="mb-4">Primeros pasos:</h3>
               <p>Crea la carpeta en donde vas a crear el proyecto.</p>
               <p>
                 Abrir el VSCode, abrir la carpeta creada, abrir la terminal y
@@ -38,7 +38,7 @@ export default function ContenidoGuias() {
               2
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>
+              <h3 className="mb-4">
                 Eliminar y modificar los archivos dentro de la carpeta src:
               </h3>
               <p>
@@ -79,7 +79,7 @@ export default function ContenidoGuias() {
               3
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Instalar librerias mas utilizadas</h3>
+              <h3 className="mb-4">Instalar librerias mas utilizadas</h3>
               <p>- react-router-dom: Para el enrutado de paginas</p>
               <p>
                 - gh-pages: Para poder subir directamente una build a Github
@@ -97,7 +97,7 @@ export default function ContenidoGuias() {
               4
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Configurar ReactDOM</h3>
+              <h3 className="mb-4">Configurar ReactDOM</h3>
               <div className="Caja-Advertencia Amarillo dark:rounded-md dark:bg-[#191207] dark:text-[#fcdfb5]">
                 <RiErrorWarningLine />
                 <p>
@@ -119,7 +119,7 @@ export default function ContenidoGuias() {
               5
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Iniciar proyecto</h3>
+              <h3 className="mb-4">Iniciar proyecto</h3>
               <p>
                 Cuado completes todos los pasos anterior, solo queda iniciar el
                 proyecto desde la consola de VScode.
@@ -144,7 +144,7 @@ export default function ContenidoGuias() {
               1
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Primeros pasos:</h3>
+              <h3 className="mb-4">Primeros pasos:</h3>
               <p>Crea la carpeta en donde vas a crear el proyecto.</p>
               <p>
                 Abrir el VSCode, abrir la carpeta creada, abrir la terminal y
@@ -159,7 +159,7 @@ export default function ContenidoGuias() {
               2
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Instalación</h3>
+              <h3 className="mb-4">Instalación</h3>
               <div className="Caja-Advertencia Azul dark:rounded-md dark:bg-[#071318] dark:text-[#b8e7fb]">
                 <RiErrorWarningLine />
                 <p>
@@ -197,7 +197,9 @@ export default function ContenidoGuias() {
               3
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Base pre fabricada para NextJS + Tailwind</h3>
+              <h3 className="mb-4">
+                Base pre fabricada para NextJS + Tailwind
+              </h3>
               <p>
                 He modificado varios archivos de NextJS para un inicio mas
                 rapido
@@ -226,7 +228,9 @@ export default function ContenidoGuias() {
               4
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Instalar dependencias para la base de NextJS</h3>
+              <h3 className="mb-4">
+                Instalar dependencias para la base de NextJS
+              </h3>
               <div className="Caja-Advertencia Amarillo dark:rounded-md dark:bg-[#191207] dark:text-[#fcdfb5]">
                 <RiErrorWarningLine />
                 <p>
@@ -257,7 +261,7 @@ export default function ContenidoGuias() {
               5
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Iniciar proyecto</h3>
+              <h3 className="mb-4">Iniciar proyecto</h3>
               <p>Ahora, solo queda iniciar nuestro nuevo proyecto de NextJS</p>
               <CodeBox id="IniciarProyectoNextJS" />
             </div>
@@ -301,7 +305,7 @@ export default function ContenidoGuias() {
               2
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Crear archivo CNAME</h3>
+              <h3 className="mb-4">Crear archivo CNAME</h3>
               <p>
                 - Dentro de la carpeta public, crear un nuevo archivo llamado
                 "CNAME"
@@ -323,7 +327,9 @@ export default function ContenidoGuias() {
               3
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Configurar DNS en el proveedor de dominios</h3>
+              <h3 className="mb-4">
+                Configurar DNS en el proveedor de dominios
+              </h3>
               <p>
                 Una vez teniendo ya la web comprada, ir a la configuración de
                 DNS
@@ -345,7 +351,7 @@ export default function ContenidoGuias() {
               4
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Crear repositorio de Github</h3>
+              <h3 className="mb-4">Crear repositorio de Github</h3>
               <p>- Se debe crear un nuevo repositorio de Github en publico</p>
               <p>
                 - Copiar todas las lineas de codigo, omitiendo "echo "#
@@ -367,7 +373,7 @@ export default function ContenidoGuias() {
               5
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Deployar con Github</h3>
+              <h3 className="mb-4">Deployar con Github</h3>
               <p>
                 - Una vez que se subieron todos los archivos a Github con los
                 codigos anteriores, vamos a usar el siguente codigo.
@@ -394,7 +400,7 @@ export default function ContenidoGuias() {
               6
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Deployar con Github</h3>
+              <h3 className="mb-4">Deployar con Github</h3>
               <p>
                 - En Github dentro de Settings y Pages, ir hasta la seccion
                 "Custom domain" en donde se podra observar en un color amarillo,
@@ -425,7 +431,7 @@ export default function ContenidoGuias() {
               7
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Push y Pull de Github</h3>
+              <h3 className="mb-4">Push y Pull de Github</h3>
               <p>
                 Comandos para subir cambios de PC a Github, o actualizar cambios
                 de Github a PC.
@@ -446,7 +452,7 @@ export default function ContenidoGuias() {
               1
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Instalar CLI Vercel</h3>
+              <h3 className="mb-4">Instalar CLI Vercel</h3>
               <div className="Caja-Advertencia Amarillo dark:rounded-md dark:bg-[#191207] dark:text-[#fcdfb5]">
                 <RiErrorWarningLine />
                 <p>
@@ -469,7 +475,7 @@ export default function ContenidoGuias() {
               2
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Configuración</h3>
+              <h3 className="mb-4">Configuración</h3>
               <p>
                 Despues de haber iniciado sesion con vercel, simplemente
                 ingresar el comando "vercel"
@@ -511,7 +517,7 @@ export default function ContenidoGuias() {
               3
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Actualizar/Deployar</h3>
+              <h3 className="mb-4">Actualizar/Deployar</h3>
               <p>
                 Para actualizar algun cambio a nuestro proyecto de vercel, se
                 utilizara el siguente comando
@@ -539,7 +545,7 @@ export default function ContenidoGuias() {
         <div className="timeline dark:before:bg-[#1d2126]">
           <div className="timeline-item">
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Metatados</h3>
+              <h3 className="mb-4">Metatados</h3>
               <p>
                 Estos tienen que ser introducidos dentro del archivo index.html
                 de la carpeta "public"
@@ -605,7 +611,7 @@ export default function ContenidoGuias() {
               1
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Instalar Magick</h3>
+              <h3 className="mb-4">Instalar Magick</h3>
               <p>
                 Con esta herramienta, permite convertir las imagenes .png .jpg y
                 cualquier otro formato a un formato .webp, el cual es
@@ -636,7 +642,7 @@ export default function ContenidoGuias() {
               2
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Paso 2</h3>
+              <h3 className="mb-4">Paso 2</h3>
               <p>
                 - Abrir la terminal de comandos directamente en la carpeta donde
                 estan alojadas las imagenes y usar los siguentes comandos
@@ -750,7 +756,7 @@ export default function ContenidoGuias() {
               1
             </div>
             <div className="timeline-content dark:text-white dark:shadow-customdark">
-              <h3>Paso 1</h3>
+              <h3 className="mb-4" >Paso 1</h3>
               <p>Crea la carpeta en donde vas a crear el proyecto.</p>
               <CodeBox id="InstalarNextJS" />
               <div className="Caja-Advertencia Amarillo dark:rounded-md dark:bg-[#191207] dark:text-[#fcdfb5]">
