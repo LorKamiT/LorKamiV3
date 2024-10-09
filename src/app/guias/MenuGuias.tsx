@@ -1,8 +1,10 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function MenuGuias() {
+  const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export default function MenuGuias() {
         top: sectionElement.offsetTop,
         behavior: "smooth",
       });
+      window.history.pushState(null, "", `${pathname}#${id}`);
     }
   };
 

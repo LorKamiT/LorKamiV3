@@ -82,5 +82,9 @@ export const siteConfig = {
     discord: "https://discord.gg/QbZ9UUpc6",
     twitter: "https://x.com/LorKami2",
     github: "https://github.com/LorKami",
+    basereact:
+      "https://lorkamiv2.vercel.app/descargas/Base-inicial-para-React.rar",
+    basenext:
+      "https://lorkamiv2.vercel.app/descargas/Base-inicial-para-NextJS-Tailwind.rar",
   },
 };

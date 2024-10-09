@@ -2,6 +2,7 @@ import CodeBox from "@/components/Codebox/CodeBox";
 
 import { RiErrorWarningLine } from "react-icons/ri";
 import { FaCloudArrowDown } from "react-icons/fa6";
+import { siteConfig } from "@/config/site";
 import Image from "next/image";
 
 import DNS from "../../../public/Guias/DNS/DNS.webp";
@@ -65,7 +66,7 @@ export default function ContenidoGuias() {
                 </p>
               </div>
               <div className="Caja-Descarga">
-                <a href="/descargas/Base-inicial-para-React.rar" download>
+                <a href={siteConfig.links.basereact} download>
                   <button className="dark:bg-[#82c3f8] dark:text-[#091520] dark:hover:bg-[#42a5f5]">
                     <FaCloudArrowDown /> DESCARGAR ARCHIVOS
                   </button>
@@ -211,10 +212,7 @@ export default function ContenidoGuias() {
                 para iniciar rapido.
               </p>
               <div className="Caja-Descarga">
-                <a
-                  href="/descargas/Base-inicial-para-NextJS-Tailwind.rar"
-                  download
-                >
+                <a href={siteConfig.links.basenext} download>
                   <button>
                     <FaCloudArrowDown /> DESCARGAR ARCHIVOS
                   </button>
