@@ -1,8 +1,8 @@
 export const metadata = {
-  title: "Guias",
+  title: "Fichas",
 };
 
-export default function GuiasLayout({
+export default function FichasLayout({
   children,
 }: {
   children: React.ReactNode;

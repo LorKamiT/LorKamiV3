@@ -34,14 +34,14 @@ export const siteConfig = {
       label: "Lyrics",
       href: "/lyrics",
     },
-    {
-      label: "Mapa interactivo",
-      href: "/mapainteractivo",
-    },
-    {
-      label: "Proyecto windows",
-      href: "/proyectowindows",
-    },
+    // {
+    //   label: "Mapa interactivo",
+    //   href: "/mapainteractivo",
+    // },
+    // {
+    //   label: "Proyecto windows",
+    //   href: "/proyectowindows",
+    // },
     {
       label: "Pagina LorKami V1",
       href: "https://lorkami.vercel.app/",
