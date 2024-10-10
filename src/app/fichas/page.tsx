@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-interface Character {
+interface Personajes {
   id: number;
   imagen: string;
   posicionImagen: string;
@@ -33,18 +33,15 @@ interface Character {
   miedos: string;
   gustosAficiones: string;
 }
-interface CharacterCardProps {
-  character: Character;
+interface PersonajesProps {
+  personaje: Personajes;
 }
 
-export default function Fichas({ character }: CharacterCardProps) {
-  console.log("Character prop received:", character);
-
+export default function Fichas({ personaje }: PersonajesProps) {
   const [showDetails, setShowDetails] = useState(false);
 
-  if (!character || !character.nombreCompleto) {
-    console.error("Invalid character prop:", character);
-    return <div>Error: Personaje inválido</div>;
+  if (!personaje || !personaje.nombreCompleto) {
+    return <div>Error: Personaje inválido xd</div>;
   }
 
   return (
@@ -52,84 +49,87 @@ export default function Fichas({ character }: CharacterCardProps) {
       <div className="Tarjeta">
         <div className="Imagen">
           <Image
-            src={character.imagen}
-            alt={character.nombreCompleto}
-            width={400}
-            height={400}
+            src={personaje.imagen}
+            alt={personaje.nombreCompleto}
+            width={300}
+            height={300}
             className="h-48 w-full object-cover"
           />
         </div>
         <div className="TarjetaInfo">
-          <h2 className="nombreCompleto">{character.nombreCompleto}</h2>
-          <h3 className="Servidor">{character.plataforma}</h3>
-          <h3 className="apodo">Apodo: {character.apodo}</h3>
-          <h3 className="edadActual">Edad: {character.edadActual}</h3>
+          <h2 className="nombreCompleto">{personaje.nombreCompleto}</h2>
+          <h3 className="Servidor">{personaje.plataforma}</h3>
+          <h3 className="apodo">Apodo: {personaje.apodo}</h3>
+          <h3 className="edadActual">Edad: {personaje.edadActual}</h3>
           {showDetails && (
             <div className="MasInformación">
               <p>
                 <strong>Fecha de nacimiento:</strong>{" "}
-                {character.fechaNacimiento}
+                {personaje.fechaNacimiento}
               </p>
               <p>
                 <strong>Lugar de nacimiento:</strong>{" "}
-                {character.lugarNacimiento}
+                {personaje.lugarNacimiento}
               </p>
               <p>
-                <strong>Estado civil:</strong>
+                <strong>Estado civil:</strong> {personaje.estadoCivil}
               </p>
               <p>
-                <strong>Altura:</strong>
+                <strong>Altura:</strong> {personaje.altura}
               </p>
               <p>
-                <strong>Peso:</strong>
+                <strong>Peso:</strong> {personaje.peso}
               </p>
               <p>
-                <strong>Raza:</strong>
+                <strong>Raza:</strong> {personaje.raza}
               </p>
               <p>
-                <strong>Color de ojos:</strong>
+                <strong>Color de ojos:</strong> {personaje.colorOjos}
               </p>
               <p>
-                <strong>Color de cabello:</strong>
+                <strong>Color de cabello:</strong> {personaje.colorCabello}
               </p>
               <p>
-                <strong>Cicatrices:</strong>
+                <strong>Cicatrices:</strong> {personaje.cicatrices}
               </p>
               <p>
-                <strong>Residencia:</strong>
+                <strong>Residencia:</strong> {personaje.residencia}
               </p>
               <p>
-                <strong>Antecedentes penales:</strong>
+                <strong>Antecedentes penales:</strong>{" "}
+                {personaje.antecedentesPenales}
               </p>
               <p>
-                <strong>Historial médico:</strong>
+                <strong>Historial médico:</strong> {personaje.historialMedico}
               </p>
               <p>
-                <strong>Estudios:</strong>
+                <strong>Estudios:</strong> {personaje.estudios}
               </p>
               <p>
-                <strong>Biografia:</strong>
+                <strong>Biografia:</strong> {personaje.historia}
               </p>
               <p>
-                <strong>Descripción psicologica:</strong>
+                <strong>Descripción psicologica:</strong>{" "}
+                {personaje.descripcionPsicologica}
               </p>
               <p>
-                <strong>Descripción fisica:</strong>
+                <strong>Descripción fisica:</strong>{" "}
+                {personaje.descripcionFisica}
               </p>
               <p>
-                <strong>Aspiraciónes:</strong>
+                <strong>Aspiraciónes:</strong> {personaje.aspiraciones}
               </p>
               <p>
-                <strong>Defectos:</strong>
+                <strong>Defectos:</strong> {personaje.defectos}
               </p>
               <p>
-                <strong>Virtudes:</strong>
+                <strong>Virtudes:</strong> {personaje.virtudes}
               </p>
               <p>
-                <strong>Miedos:</strong>
+                <strong>Miedos:</strong> {personaje.miedos}
               </p>
               <p>
-                <strong>Gustos y aficiones:</strong>
+                <strong>Gustos y aficiones:</strong> {personaje.gustosAficiones}
               </p>
             </div>
           )}
