@@ -54,8 +54,8 @@ export default function Fichas({ character }: CharacterCardProps) {
           <Image
             src={character.imagen}
             alt={character.nombreCompleto}
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             className="h-48 w-full object-cover"
           />
         </div>
