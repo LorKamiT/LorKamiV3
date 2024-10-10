@@ -1,40 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Fichas from "../app/fichas/page";
+import Fichas from "./Fichas";
+import { Personajes } from "../types";
 
-interface Personajes {
-  id: number;
-  imagen: string;
-  posicionImagen: string;
-  plataforma: string;
-  nombreCompleto: string;
-  apodo: string;
-  fechaNacimiento: string;
-  edadActual: string;
-  lugarNacimiento: string;
-  estadoCivil: string;
-  residencia: string;
-  altura: string;
-  peso: string;
-  raza: string;
-  colorOjos: string;
-  colorCabello: string;
-  cicatrices: string;
-  antecedentesPenales: string;
-  historialMedico: string;
-  estudios: string;
-  historia: string;
-  descripcionPsicologica: string;
-  descripcionFisica: string;
-  aspiraciones: string;
-  defectos: string;
-  virtudes: string;
-  miedos: string;
-  gustosAficiones: string;
-}
-
-export default function Page() {
+export default function FichaPersonajes() {
   const [personajes, setPersonajes] = useState<Personajes[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -46,7 +16,6 @@ export default function Page() {
           throw new Error("Error al cargar los personajes");
         }
         const data: Personajes[] = await response.json();
-        console.log(data);
         setPersonajes(data);
       } catch (error) {
         console.error(error);
@@ -67,10 +36,12 @@ export default function Page() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {personajes.map((personaje) => (
-        <Fichas key={personaje.id} personaje={personaje} />
-      ))}
+    <div className="flex h-full w-full items-center justify-center pt-24">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {personajes.map((personaje) => (
+          <Fichas key={personaje.id} personaje={personaje} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -48,6 +48,8 @@ const config: Config = {
         custom5rem: "calc(100vh - 5rem)",
       },
       boxShadow: {
+        boxfichalight: "0 3px 10px rgba(0, 0, 0, 0.2)",
+        boxfichadark: "0 3px 10px rgba(255, 255, 255, 0.1)",
         customdark: "0 3px 10px rgba(255, 255, 255, 0.1);",
       },
     },
